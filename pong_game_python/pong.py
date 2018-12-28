@@ -32,6 +32,41 @@ ball.color("white")
 ball.penup()
 ball.goto(0, 0)
 
+# A 막대기 위로 이동
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+# A 막대기 아래로 이동
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
+
+# A 막대기 위로 이동
+def paddle_b_up():
+    y = paddle_b.ycor()
+    y += 20
+    paddle_b.sety(y)
+
+# A 막대기 아래로 이동
+def paddle_b_down():
+    y = paddle_b.ycor()
+    y -= 20
+    paddle_b.sety(y)
+
+# Key binding
+wn.listen()
+
+# A 플레이어 키
+wn.onkeypress(paddle_a_up, "w")
+wn.onkeypress(paddle_a_down, "s")
+
+# B 플레이어 키
+wn.onkeypress(paddle_b_up, "i")
+wn.onkeypress(paddle_b_down, "k")
+
 # 메인 게임 코드
 while True:
     wn.update()
